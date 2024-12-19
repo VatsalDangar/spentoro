@@ -8,6 +8,9 @@ app = FastAPI()
 
 class ResponseGenerator():
 
+    @app.get("/")
+    def root("/"):
+        return("hello")
     def __init__(self):
         self.client = OpenAI(api_key = os.environ.get("OPENAI_API_KEY"))
         # openai.api_key = os.environ.get("OPENAI_API_KEY")
